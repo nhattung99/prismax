@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PrismaX Learn - Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed": "#b2f1c4",
+                        "primary": "#fcf4ec",
+                        "background": "#131313",
+                        "on-tertiary-container": "#2f6946",
+                        "on-secondary": "#502501",
+                        "surface-container-high": "#2a2a2a",
+                        "error-container": "#93000a",
+                        "surface-interactive": "#262626",
+                        "surface-variant": "#353534",
+                        "outline": "#969087",
+                        "on-surface-variant": "#cdc5bc",
+                        "surface": "#131313",
+                        "primary-fixed-dim": "#ccc5be",
+                        "primary-container": "#dfd8d0",
+                        "secondary-fixed": "#ffdcc6",
+                        "surface-elevated": "#1C1C1C",
+                        "category-green": "#7CB88F",
+                        "category-gold": "#D9A45C",
+                        "surface-tint": "#ccc5be",
+                        "secondary": "#ffb787",
+                        "on-secondary-fixed": "#311300",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#625e57",
+                        "tertiary": "#d8ffe0",
+                        "on-tertiary-fixed": "#00210f",
+                        "surface-card": "#202020",
+                        "outline-variant": "#4b463f",
+                        "on-primary": "#33302b",
+                        "surface-dim": "#131313",
+                        "on-secondary-container": "#eba677",
+                        "tertiary-container": "#a9e7bb",
+                        "on-primary-fixed-variant": "#4a4640",
+                        "surface-container-lowest": "#0e0e0e",
+                        "category-terracotta": "#B87A4F",
+                        "on-secondary-fixed-variant": "#6b3a15",
+                        "text-highlight": "#FFFFFF",
+                        "primary-fixed": "#e9e1d9",
+                        "secondary-fixed-dim": "#ffb787",
+                        "on-background": "#e5e2e1",
+                        "surface-bright": "#393939",
+                        "on-primary-container": "#625e58",
+                        "surface-container-highest": "#353534",
+                        "on-primary-fixed": "#1e1b16",
+                        "surface-container": "#201f1f",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#145130",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed-dim": "#97d4a9",
+                        "secondary-container": "#6b3a15",
+                        "on-error": "#690005",
+                        "on-surface": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary": "#00391e",
+                        "inverse-on-surface": "#313030"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    spacing: {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "stack-md": "16px",
+                        "text-max-width": "750px",
+                        "stack-sm": "8px",
+                        "stack-lg": "48px"
+                    },
+                    fontFamily: {
+                        "label-mono": ["JetBrains Mono"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-tag": ["Plus Jakarta Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "label-mono": ["13px", { lineHeight: "1.0", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "label-tag": ["12px", { lineHeight: "1.0", letterSpacing: "0.02em", fontWeight: "600" }],
+                        "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "display-lg-mobile": ["36px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "display-lg": ["56px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "1.7", letterSpacing: "0.01em", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #131313; color: #fcf4ec; }
+        .hero-pattern {
+            background-image: linear-gradient(#202020 1px, transparent 1px), linear-gradient(90deg, #202020 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased overflow-x-hidden min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-surface/95 backdrop-blur-md border-b border-outline-variant transition-all duration-300 ease-in-out">
+<div class="font-headline-md text-headline-md text-primary">PrismaX Learn</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="font-label-mono text-label-mono text-primary border-b-2 border-primary pb-1" href="#">Learn 101</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-text-highlight transition-colors" href="#">Glossary</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-text-highlight transition-colors" href="#">Timeline</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-text-highlight transition-colors" href="#">Teleop Flow</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-text-highlight transition-colors" href="#">Ecosystem</a>
+</div>
+<button class="font-label-mono text-label-mono bg-primary-container text-on-primary py-2 px-4 rounded hover:bg-primary-fixed transition-colors">
+            Sign In
+        </button>
+</nav>
+<main class="flex-grow pt-24 pb-stack-lg">
+<!-- Hero Section -->
+<section class="relative py-24 px-margin-mobile md:px-gutter max-w-container-max mx-auto w-full flex flex-col items-center justify-center text-center hero-pattern border-b border-outline-variant">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 max-w-3xl">
+                Master Industrial Robotics &amp; Web3
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-text-max-width mb-12">
+                A comprehensive curriculum designed for engineers, researchers, and operators navigating the convergence of autonomous systems and decentralized networks.
+            </p>
+<!-- 3 Pillar Diagram -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mt-8 relative">
+<!-- Decorative Connecting Line (Desktop) -->
+<div class="hidden md:block absolute top-1/2 left-[10%] right-[10%] h-px bg-outline-variant -z-10"></div>
+<div class="bg-surface-card p-6 border-l-4 border-category-terracotta flex flex-col items-center group hover:bg-surface-interactive transition-colors">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-xl">Robotics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Hardware interfacing, kinematics, and physical execution layers.</p>
+</div>
+<div class="bg-surface-card p-6 border-l-4 border-category-green flex flex-col items-center group hover:bg-surface-interactive transition-colors">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="database">database</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-xl">Data</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Telemetry streaming, immutable logs, and decentralized storage.</p>
+</div>
+<div class="bg-surface-card p-6 border-l-4 border-category-gold flex flex-col items-center group hover:bg-surface-interactive transition-colors">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="psychology">psychology</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-xl">Intelligence</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">On-edge ML models, autonomous decision making, and teleop fallback.</p>
+</div>
+</div>
+</section>
+<!-- Onboarding 101 Preview -->
+<section class="py-stack-lg px-margin-mobile md:px-gutter max-w-container-max mx-auto w-full border-b border-outline-variant">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Onboarding 101</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Core concepts to begin your journey.</p>
+</div>
+<button class="hidden md:flex items-center gap-2 font-label-mono text-label-mono text-primary hover:text-text-highlight transition-colors">
+                    Explore Modules <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-card p-6 border-l-4 border-category-terracotta hover:bg-surface-interactive transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-category-terracotta/5 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+<span class="font-label-tag text-label-tag px-2 py-1 bg-category-terracotta/15 text-category-terracotta rounded mb-4 inline-block">MODULE 01</span>
+<h3 class="font-headline-md text-headline-md text-primary text-2xl mb-3">The Teleop Paradigm</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Understanding the transition from remote control to supervised autonomy in industrial environments.</p>
+<div class="flex items-center gap-2 font-label-mono text-label-mono text-primary border-t border-surface-variant pt-4">
+<span class="material-symbols-outlined text-sm" data-icon="timer">timer</span> 15 MIN READ
+                    </div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-card p-6 border-l-4 border-category-green hover:bg-surface-interactive transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-category-green/5 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+<span class="font-label-tag text-label-tag px-2 py-1 bg-category-green/15 text-category-green rounded mb-4 inline-block">MODULE 02</span>
+<h3 class="font-headline-md text-headline-md text-primary text-2xl mb-3">Immutable Logs</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">How blockchain verification ensures data integrity for robotic telemetry and maintenance records.</p>
+<div class="flex items-center gap-2 font-label-mono text-label-mono text-primary border-t border-surface-variant pt-4">
+<span class="material-symbols-outlined text-sm" data-icon="timer">timer</span> 20 MIN READ
+                    </div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-card p-6 border-l-4 border-category-gold hover:bg-surface-interactive transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-category-gold/5 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+<span class="font-label-tag text-label-tag px-2 py-1 bg-category-gold/15 text-category-gold rounded mb-4 inline-block">MODULE 03</span>
+<h3 class="font-headline-md text-headline-md text-primary text-2xl mb-3">Edge Intelligence</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Deploying localized machine learning models for low-latency decision execution on hardware.</p>
+<div class="flex items-center gap-2 font-label-mono text-label-mono text-primary border-t border-surface-variant pt-4">
+<span class="material-symbols-outlined text-sm" data-icon="timer">timer</span> 25 MIN READ
+                    </div>
+</div>
+</div>
+<button class="md:hidden mt-6 w-full flex items-center justify-center gap-2 font-label-mono text-label-mono text-primary border border-outline-variant py-3 rounded hover:bg-surface-interactive transition-colors">
+                Explore Modules <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+<!-- Glossary Preview -->
+<section class="py-stack-lg px-margin-mobile md:px-gutter max-w-container-max mx-auto w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-5">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Glossary</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                        The definitive dictionary for PrismaX terminology, bridging mechanical engineering and decentralized protocols.
+                    </p>
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-surface-interactive border-b border-outline-variant text-primary font-body-md px-12 py-3 focus:outline-none focus:border-primary focus:bg-surface-container-high transition-colors placeholder:text-on-surface-variant/50" placeholder="Search terminology..." type="text"/>
+</div>
+</div>
+<div class="lg:col-span-7 bg-surface-card border-l-4 border-outline-variant p-0 overflow-hidden">
+<div class="px-6 py-4 bg-surface-container-high border-b border-surface-variant flex justify-between items-center">
+<span class="font-label-mono text-label-mono text-on-surface-variant">RECENT TERMS</span>
+<a class="font-label-mono text-label-mono text-primary hover:underline" href="#">View All</a>
+</div>
+<ul class="divide-y divide-surface-variant">
+<li class="p-6 hover:bg-surface-interactive transition-colors cursor-pointer group flex justify-between items-center">
+<div>
+<h4 class="font-label-mono text-label-mono text-primary text-lg mb-1 group-hover:text-text-highlight">Kinematic Fallback</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-1">The safety protocol triggered when edge-intelligence models detect anomaly rates exceeding 15%.</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors ml-4" data-icon="chevron_right">chevron_right</span>
+</li>
+<li class="p-6 hover:bg-surface-interactive transition-colors cursor-pointer group flex justify-between items-center">
+<div>
+<h4 class="font-label-mono text-label-mono text-primary text-lg mb-1 group-hover:text-text-highlight">Tokenized Telemetry (TT)</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-1">Process of packaging sensor data into immutable ledger entries using <span class="font-label-mono bg-surface-variant px-1 rounded">PIX</span>.</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors ml-4" data-icon="chevron_right">chevron_right</span>
+</li>
+<li class="p-6 hover:bg-surface-interactive transition-colors cursor-pointer group flex justify-between items-center">
+<div>
+<h4 class="font-label-mono text-label-mono text-primary text-lg mb-1 group-hover:text-text-highlight">Latency Arbitrage</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-1">Differential optimization in teleop streams to prioritize critical actuation commands over visual feedback.</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors ml-4" data-icon="chevron_right">chevron_right</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-stack-lg px-gutter flex flex-col md:flex-row justify-between items-center gap-stack-md bg-surface-container-lowest border-t border-outline-variant">
+<div class="font-label-mono text-label-mono text-primary">
+            © 2024 PrismaX Engine. Industrial Editorial Systems.
+        </div>
+<div class="flex gap-6">
+<a class="font-label-tag text-label-tag text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Documentation</a>
+<a class="font-label-tag text-label-tag text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms</a>
+<a class="font-label-tag text-label-tag text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="font-label-tag text-label-tag text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Github</a>
+</div>
+</footer>
+</body></html>
