@@ -111,16 +111,6 @@ export const OnboardingGrid: React.FC<OnboardingGridProps> = ({ searchQuery }) =
           const borderColor = getBorderColor(topic.category);
           const tagStyle = getTagStyle(topic.category);
 
-          // Assign robot avatar thumbnail per category
-          const robotThumb =
-            topic.category === 'teleop'
-              ? '/images/robot_torso.png'
-              : topic.category === 'hardware'
-              ? '/images/robot_quadruped.png'
-              : topic.category === 'tokens'
-              ? '/images/robot_cat.png'
-              : '/images/robot_humanoid.png';
-
           return (
             <div
               key={topic.id}
@@ -128,21 +118,16 @@ export const OnboardingGrid: React.FC<OnboardingGridProps> = ({ searchQuery }) =
               className={`bg-[#202020] p-6 border-l-4 ${borderColor} border-t border-r border-b border-[#4B463F] rounded-md flex flex-col justify-between hover:bg-[#262626] transition-all group cursor-pointer relative overflow-hidden`}
             >
               <div>
-                {/* Module Tag Pill & Concept Icon & Robot Avatar */}
+                {/* Module Tag Pill & Concept Icon */}
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className={`font-label-tag text-xs px-2.5 py-1 rounded border ${tagStyle} font-semibold flex items-center gap-1.5`}>
-                      {getTopicIcon(topic.id)}
-                      <span>MODULE {String(topic.number).padStart(2, '0')}</span>
-                    </span>
-                  </div>
+                  <span className={`font-label-tag text-xs px-2.5 py-1 rounded border ${tagStyle} font-semibold flex items-center gap-1.5`}>
+                    {getTopicIcon(topic.id)}
+                    <span>MODULE {String(topic.number).padStart(2, '0')}</span>
+                  </span>
 
-                  <div className="flex items-center gap-2">
-                    <img src={robotThumb} alt="Robot Avatar" className="w-8 h-8 rounded-full bg-[#131313] p-0.5 border border-[#4B463F] object-contain" />
-                    <span className="font-label-mono text-[11px] text-[#969087] uppercase tracking-wider">
-                      {topic.category}
-                    </span>
-                  </div>
+                  <span className="font-label-mono text-[11px] text-[#969087] uppercase tracking-wider">
+                    {topic.category}
+                  </span>
                 </div>
 
                 {/* Title & Subtitle */}

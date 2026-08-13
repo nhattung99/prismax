@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Bot, Database, Brain } from 'lucide-react';
 
 interface HeroSectionProps {
   onExploreModules: () => void;
@@ -67,7 +67,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreModules }) =>
 
       </div>
 
-      {/* 3 Pillar Diagram Grid with Real Robot Images */}
+      {/* 3 Pillar Diagram Grid with Clean Glowing Category Icons */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl mt-4 relative">
         
         {/* Desktop Connector Line */}
@@ -75,8 +75,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreModules }) =>
 
         {/* Pillar 1: Robotics */}
         <div className="bg-[#202020] p-6 border-l-4 border-l-[#B87A4F] border-t border-r border-b border-[#4B463F] rounded-md flex flex-col items-center text-center group hover:bg-[#262626] transition-all relative overflow-hidden">
-          <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 border border-[#B87A4F]/40 bg-[#B87A4F]/15 flex items-center justify-center p-1 group-hover:scale-105 transition-transform">
-            <img src="/images/robot_torso.png" alt="Robotics Hardware" className="w-full h-full object-contain" />
+          <div className="w-16 h-16 rounded-xl mb-4 border border-[#B87A4F]/40 bg-[#B87A4F]/15 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-[#B87A4F]/10">
+            <Bot className="w-8 h-8 text-[#B87A4F]" />
           </div>
           <h3 className="font-headline-md text-xl font-bold font-serif-editorial text-[#FCF4EC] mb-2">
             Robotics
@@ -88,8 +88,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreModules }) =>
 
         {/* Pillar 2: Data */}
         <div className="bg-[#202020] p-6 border-l-4 border-l-[#7CB88F] border-t border-r border-b border-[#4B463F] rounded-md flex flex-col items-center text-center group hover:bg-[#262626] transition-all relative overflow-hidden">
-          <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 border border-[#7CB88F]/40 bg-[#7CB88F]/15 flex items-center justify-center p-1 group-hover:scale-105 transition-transform">
-            <img src="/images/robot_quadruped.png" alt="Robot Telemetry Data" className="w-full h-full object-contain" />
+          <div className="w-16 h-16 rounded-xl mb-4 border border-[#7CB88F]/40 bg-[#7CB88F]/15 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-[#7CB88F]/10">
+            <Database className="w-8 h-8 text-[#7CB88F]" />
           </div>
           <h3 className="font-headline-md text-xl font-bold font-serif-editorial text-[#FCF4EC] mb-2">
             Data
@@ -101,8 +101,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreModules }) =>
 
         {/* Pillar 3: Intelligence */}
         <div className="bg-[#202020] p-6 border-l-4 border-l-[#D9A45C] border-t border-r border-b border-[#4B463F] rounded-md flex flex-col items-center text-center group hover:bg-[#262626] transition-all relative overflow-hidden">
-          <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 border border-[#D9A45C]/40 bg-[#D9A45C]/15 flex items-center justify-center p-1 group-hover:scale-105 transition-transform">
-            <img src="/images/robot_humanoid.png" alt="Physical AI Intelligence" className="w-full h-full object-contain" />
+          <div className="w-16 h-16 rounded-xl mb-4 border border-[#D9A45C]/40 bg-[#D9A45C]/15 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-[#D9A45C]/10">
+            <Brain className="w-8 h-8 text-[#D9A45C]" />
           </div>
           <h3 className="font-headline-md text-xl font-bold font-serif-editorial text-[#FCF4EC] mb-2">
             Intelligence
