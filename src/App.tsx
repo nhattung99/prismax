@@ -32,26 +32,34 @@ export function App() {
               const element = document.getElementById('curriculum-grid');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }} />
-            <div id="curriculum-grid">
+            <section id="curriculum-grid" className="bg-[#1C1C1C] p-6 sm:p-8 rounded-2xl border border-[#4B463F] shadow-2xl">
               <OnboardingGrid searchQuery={searchQuery} />
-            </div>
+            </section>
           </>
         )}
 
         {activeTab === 'glossary' && (
-          <GlossaryView searchQuery={searchQuery} />
+          <section className="bg-[#1C1C1C] p-6 sm:p-8 rounded-2xl border border-[#4B463F] shadow-2xl">
+            <GlossaryView searchQuery={searchQuery} />
+          </section>
         )}
 
         {activeTab === 'workflow' && (
-          <TeleopWorkflow />
+          <section className="bg-[#1C1C1C] p-6 sm:p-8 rounded-2xl border border-[#4B463F] shadow-2xl">
+            <TeleopWorkflow />
+          </section>
         )}
 
         {activeTab === 'ecosystem' && (
-          <EcosystemMap searchQuery={searchQuery} />
+          <section className="bg-[#1C1C1C] p-6 sm:p-8 rounded-2xl border border-[#4B463F] shadow-2xl">
+            <EcosystemMap searchQuery={searchQuery} />
+          </section>
         )}
 
         {activeTab === 'timeline' && (
-          <TimelineView searchQuery={searchQuery} />
+          <section className="bg-[#1C1C1C] p-6 sm:p-8 rounded-2xl border border-[#4B463F] shadow-2xl">
+            <TimelineView searchQuery={searchQuery} />
+          </section>
         )}
 
       </main>

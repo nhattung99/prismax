@@ -82,12 +82,12 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         <a
-          href="https://prismax.ai"
+          href="https://app.prismax.ai"
           target="_blank"
           rel="noreferrer"
           className="btn-editorial-primary flex items-center gap-1.5 shrink-0"
         >
-          <span>prismax.ai</span>
+          <span>OPEN APP</span>
           <ExternalLink className="w-3.5 h-3.5" />
         </a>
 

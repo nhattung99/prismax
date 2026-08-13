@@ -75,7 +75,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreModules }) =>
 
         {/* Pillar 1: Robotics */}
         <div className="bg-[#202020] p-6 border-l-4 border-l-[#B87A4F] border-t border-r border-b border-[#4B463F] rounded-md flex flex-col items-center text-center group hover:bg-[#262626] transition-all relative overflow-hidden">
-          <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 border border-[#4B463F] bg-[#131313] flex items-center justify-center p-1 group-hover:scale-105 transition-transform">
+          <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 border border-[#B87A4F]/40 bg-[#B87A4F]/15 flex items-center justify-center p-1 group-hover:scale-105 transition-transform">
             <img src="/images/robot_torso.png" alt="Robotics Hardware" className="w-full h-full object-contain" />
           </div>
           <h3 className="font-headline-md text-xl font-bold font-serif-editorial text-[#FCF4EC] mb-2">
@@ -88,7 +88,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreModules }) =>
 
         {/* Pillar 2: Data */}
         <div className="bg-[#202020] p-6 border-l-4 border-l-[#7CB88F] border-t border-r border-b border-[#4B463F] rounded-md flex flex-col items-center text-center group hover:bg-[#262626] transition-all relative overflow-hidden">
-          <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 border border-[#4B463F] bg-[#131313] flex items-center justify-center p-1 group-hover:scale-105 transition-transform">
+          <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 border border-[#7CB88F]/40 bg-[#7CB88F]/15 flex items-center justify-center p-1 group-hover:scale-105 transition-transform">
             <img src="/images/robot_quadruped.png" alt="Robot Telemetry Data" className="w-full h-full object-contain" />
           </div>
           <h3 className="font-headline-md text-xl font-bold font-serif-editorial text-[#FCF4EC] mb-2">
@@ -101,7 +101,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreModules }) =>
 
         {/* Pillar 3: Intelligence */}
         <div className="bg-[#202020] p-6 border-l-4 border-l-[#D9A45C] border-t border-r border-b border-[#4B463F] rounded-md flex flex-col items-center text-center group hover:bg-[#262626] transition-all relative overflow-hidden">
-          <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 border border-[#4B463F] bg-[#131313] flex items-center justify-center p-1 group-hover:scale-105 transition-transform">
+          <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 border border-[#D9A45C]/40 bg-[#D9A45C]/15 flex items-center justify-center p-1 group-hover:scale-105 transition-transform">
             <img src="/images/robot_humanoid.png" alt="Physical AI Intelligence" className="w-full h-full object-contain" />
           </div>
           <h3 className="font-headline-md text-xl font-bold font-serif-editorial text-[#FCF4EC] mb-2">

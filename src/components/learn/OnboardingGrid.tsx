@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { BookOpen, AlertTriangle, ArrowRight, ShieldAlert, Sparkles, X, Info, Clock } from 'lucide-react';
+import {
+  BookOpen, AlertTriangle, ArrowRight, ShieldAlert, Sparkles, X, Info, Clock,
+  Layers, Shapes, Eye, Building2, Gamepad2, CheckSquare, Award, Coins,
+  CircleDollarSign, Globe, Bot, ShieldCheck
+} from 'lucide-react';
 import type { OnboardingTopic, TopicCategory } from '../../types/learn';
 import { ONBOARDING_TOPICS } from '../../data/learnContent';
 
@@ -34,7 +38,7 @@ export const OnboardingGrid: React.FC<OnboardingGridProps> = ({ searchQuery }) =
       case 'core': return 'border-l-[#7CB88F]';
       case 'teleop': return 'border-l-[#B87A4F]';
       case 'tokens': return 'border-l-[#D9A45C]';
-      case 'hardware': return 'border-l-[#9B6B9E]';
+      case 'hardware': return 'border-l-[#B87A4F]';
     }
   };
 
@@ -43,7 +47,25 @@ export const OnboardingGrid: React.FC<OnboardingGridProps> = ({ searchQuery }) =
       case 'core': return 'bg-[#7CB88F]/15 text-[#7CB88F] border-[#7CB88F]/30';
       case 'teleop': return 'bg-[#B87A4F]/15 text-[#B87A4F] border-[#B87A4F]/30';
       case 'tokens': return 'bg-[#D9A45C]/15 text-[#D9A45C] border-[#D9A45C]/30';
-      case 'hardware': return 'bg-[#9B6B9E]/15 text-[#9B6B9E] border-[#9B6B9E]/30';
+      case 'hardware': return 'bg-[#B87A4F]/15 text-[#B87A4F] border-[#B87A4F]/30';
+    }
+  };
+
+  const getTopicIcon = (topicId: string) => {
+    switch (topicId) {
+      case 'what-is-prismax': return <Layers className="w-4 h-4" />;
+      case 'three-pillars': return <Shapes className="w-4 h-4" />;
+      case 'vla': return <Eye className="w-4 h-4" />;
+      case 'vla-foundry': return <Building2 className="w-4 h-4" />;
+      case 'teleoperation': return <Gamepad2 className="w-4 h-4" />;
+      case 'verify-quality': return <CheckSquare className="w-4 h-4" />;
+      case 'the-first-100': return <Award className="w-4 h-4" />;
+      case 'prisma-points': return <Coins className="w-4 h-4" />;
+      case 'pix-token': return <CircleDollarSign className="w-4 h-4" />;
+      case 'gateway': return <Globe className="w-4 h-4" />;
+      case 'robot-fleet': return <Bot className="w-4 h-4" />;
+      case 'membership-tiers': return <ShieldCheck className="w-4 h-4" />;
+      default: return <BookOpen className="w-4 h-4" />;
     }
   };
 
@@ -106,11 +128,14 @@ export const OnboardingGrid: React.FC<OnboardingGridProps> = ({ searchQuery }) =
               className={`bg-[#202020] p-6 border-l-4 ${borderColor} border-t border-r border-b border-[#4B463F] rounded-md flex flex-col justify-between hover:bg-[#262626] transition-all group cursor-pointer relative overflow-hidden`}
             >
               <div>
-                {/* Module Tag Pill & Robot Thumbnail Avatar */}
+                {/* Module Tag Pill & Concept Icon & Robot Avatar */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className={`font-label-tag text-xs px-2.5 py-1 rounded border ${tagStyle} font-semibold`}>
-                    MODULE {String(topic.number).padStart(2, '0')}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className={`font-label-tag text-xs px-2.5 py-1 rounded border ${tagStyle} font-semibold flex items-center gap-1.5`}>
+                      {getTopicIcon(topic.id)}
+                      <span>MODULE {String(topic.number).padStart(2, '0')}</span>
+                    </span>
+                  </div>
 
                   <div className="flex items-center gap-2">
                     <img src={robotThumb} alt="Robot Avatar" className="w-8 h-8 rounded-full bg-[#131313] p-0.5 border border-[#4B463F] object-contain" />

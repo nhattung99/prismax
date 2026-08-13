@@ -17,7 +17,6 @@
     --cat-terracotta: #B87A4F;
     --cat-green: #7CB88F;
     --cat-gold: #D9A45C;
-    --cat-purple: #9B6B9E;
   }
 
   body {
@@ -87,10 +86,6 @@
 
 .border-accent-gold {
   border-left-color: #D9A45C !important;
-}
-
-.border-accent-purple {
-  border-left-color: #9B6B9E !important;
 }
 
 /* Primary Editorial Button */
