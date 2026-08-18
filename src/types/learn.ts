@@ -54,7 +54,14 @@ export interface EcosystemSector {
   entities: EcosystemEntity[];
 }
 
-export type FaqCategory = 'account' | 'points' | 'teleop' | 'queue' | 'rewards' | 'troubleshooting';
+export type FaqCategory =
+  | 'teleop'
+  | 'points'
+  | 'account'
+  | 'payment'
+  | 'validation'
+  | 'troubleshooting'
+  | 'owner_operator';
 
 export interface FaqItem {
   id: string;
