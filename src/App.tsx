@@ -6,6 +6,7 @@ import { GlossaryView } from './components/learn/GlossaryView';
 import { TeleopWorkflow } from './components/learn/TeleopWorkflow';
 import { EcosystemMap } from './components/learn/EcosystemMap';
 import { TimelineView } from './components/learn/TimelineView';
+import { FaqView } from './components/learn/FaqView';
 import { ExternalLink } from 'lucide-react';
 
 export function App() {
@@ -59,6 +60,12 @@ export function App() {
         {activeTab === 'timeline' && (
           <section className="bg-[#1C1C1C] p-6 sm:p-8 rounded-2xl border border-[#4B463F] shadow-2xl">
             <TimelineView searchQuery={searchQuery} />
+          </section>
+        )}
+
+        {activeTab === 'faq' && (
+          <section className="bg-[#1C1C1C] p-6 sm:p-8 rounded-2xl border border-[#4B463F] shadow-2xl">
+            <FaqView searchQuery={searchQuery} />
           </section>
         )}
 

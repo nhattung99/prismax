@@ -53,3 +53,13 @@ export interface EcosystemSector {
   description: string;
   entities: EcosystemEntity[];
 }
+
+export type FaqCategory = 'account' | 'points' | 'teleop' | 'queue' | 'rewards' | 'troubleshooting';
+
+export interface FaqItem {
+  id: string;
+  category: FaqCategory;
+  question: string;
+  answer: string;
+  sourceNote?: string;
+}

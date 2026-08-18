@@ -1,7 +1,7 @@
 import React from 'react';
 import { Search, ExternalLink } from 'lucide-react';
 
-export type LearnTab = 'onboarding' | 'glossary' | 'workflow' | 'ecosystem' | 'timeline';
+export type LearnTab = 'onboarding' | 'glossary' | 'workflow' | 'ecosystem' | 'timeline' | 'faq';
 
 interface HeaderProps {
   activeTab: LearnTab;
@@ -21,7 +21,8 @@ export const Header: React.FC<HeaderProps> = ({
     { id: 'glossary', label: 'Glossary' },
     { id: 'workflow', label: 'How Teleop Works' },
     { id: 'ecosystem', label: 'Ecosystem' },
-    { id: 'timeline', label: 'Timeline' }
+    { id: 'timeline', label: 'Timeline' },
+    { id: 'faq', label: 'FAQ' }
   ];
 
   return (
