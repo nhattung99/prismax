@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BookMarked, Search, ChevronRight } from 'lucide-react';
+import { BookMarked, Search, ChevronRight, Heart } from 'lucide-react';
 import type { GlossaryCategory } from '../../types/learn';
 import { GLOSSARY_TERMS } from '../../data/learnContent';
 
@@ -13,13 +13,13 @@ export const GlossaryView: React.FC<GlossaryViewProps> = ({ searchQuery }) => {
 
   const effectiveSearch = searchQuery || localSearch;
 
-  const categories: { id: GlossaryCategory | 'all'; label: string }[] = [
-    { id: 'all', label: 'All Terms (19)' },
-    { id: 'general', label: 'General & Architecture' },
-    { id: 'teleop', label: 'Teleop & Quality' },
-    { id: 'token', label: 'Tokens & Settlement' },
-    { id: 'hardware', label: 'Hardware & Portals' },
-    { id: 'roles', label: 'Roles & Tiers' }
+  const categories: { id: GlossaryCategory | 'all'; label: string; icon: string }[] = [
+    { id: 'all', label: 'All Terms (19)', icon: '📖' },
+    { id: 'general', label: 'General & Architecture', icon: '🌱' },
+    { id: 'teleop', label: 'Teleop & Quality', icon: '⚡' },
+    { id: 'token', label: 'Tokens & Settlement', icon: '🎁' },
+    { id: 'hardware', label: 'Hardware & Portals', icon: '🤖' },
+    { id: 'roles', label: 'Roles & Tiers', icon: '👑' }
   ];
 
   const filteredTerms = GLOSSARY_TERMS.filter((term) => {
@@ -35,23 +35,23 @@ export const GlossaryView: React.FC<GlossaryViewProps> = ({ searchQuery }) => {
 
   const getCategoryBorder = (category: GlossaryCategory) => {
     switch (category) {
-      case 'general': return 'border-l-[#7CB88F]';
-      case 'teleop': return 'border-l-[#B87A4F]';
-      case 'token': return 'border-l-[#D9A45C]';
-      case 'hardware': return 'border-l-[#B87A4F]';
-      case 'roles': return 'border-l-[#7CB88F]';
-      default: return 'border-l-[#B87A4F]';
+      case 'general': return 'border-l-[#52B788]';
+      case 'teleop': return 'border-l-[#FF6B8B]';
+      case 'token': return 'border-l-[#FFB703]';
+      case 'hardware': return 'border-l-[#FF6B8B]';
+      case 'roles': return 'border-l-[#52B788]';
+      default: return 'border-l-[#FF6B8B]';
     }
   };
 
   const getCategoryTagStyle = (category: GlossaryCategory) => {
     switch (category) {
-      case 'general': return 'bg-[#7CB88F]/15 text-[#7CB88F] border-[#7CB88F]/30';
-      case 'teleop': return 'bg-[#B87A4F]/15 text-[#B87A4F] border-[#B87A4F]/30';
-      case 'token': return 'bg-[#D9A45C]/15 text-[#D9A45C] border-[#D9A45C]/30';
-      case 'hardware': return 'bg-[#B87A4F]/15 text-[#B87A4F] border-[#B87A4F]/30';
-      case 'roles': return 'bg-[#7CB88F]/15 text-[#7CB88F] border-[#7CB88F]/30';
-      default: return 'bg-[#B87A4F]/15 text-[#B87A4F] border-[#B87A4F]/30';
+      case 'general': return 'bg-[#52B788]/15 text-[#2D6A4F] border-[#52B788]/40';
+      case 'teleop': return 'bg-[#FF6B8B]/15 text-[#E0527F] border-[#FF6B8B]/40';
+      case 'token': return 'bg-[#FFB703]/20 text-[#B58200] border-[#FFB703]/40';
+      case 'hardware': return 'bg-[#FF6B8B]/15 text-[#E0527F] border-[#FF6B8B]/40';
+      case 'roles': return 'bg-[#52B788]/15 text-[#2D6A4F] border-[#52B788]/40';
+      default: return 'bg-[#FF6B8B]/15 text-[#E0527F] border-[#FF6B8B]/40';
     }
   };
 
@@ -59,41 +59,42 @@ export const GlossaryView: React.FC<GlossaryViewProps> = ({ searchQuery }) => {
     <div className="space-y-6">
       
       {/* Top Banner & Control Area */}
-      <div className="bg-[#1C1C1C] border border-[#4B463F] rounded-md p-6 space-y-6">
+      <div className="bg-white border-2 border-[#FFC2D1] rounded-3xl p-6 space-y-6 shadow-sm">
         
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-1">
-            <h2 className="font-headline-md text-2xl sm:text-3xl font-bold font-serif-editorial text-[#FCF4EC] flex items-center gap-2">
-              <BookMarked className="w-6 h-6 text-[#B87A4F]" />
+            <h2 className="font-headline-md text-2xl sm:text-3xl font-bold font-serif-editorial text-[#3A2D32] flex items-center gap-2">
+              <BookMarked className="w-6 h-6 text-[#FF6B8B]" />
               <span>Glossary Dictionary</span>
+              <Heart className="w-4 h-4 text-[#FF4D6D] fill-[#FF4D6D]" />
             </h2>
-            <p className="font-body-md text-xs sm:text-sm text-[#CDC5BC]">
+            <p className="font-sans text-xs sm:text-sm text-[#6E5762]">
               The definitive dictionary for PrismaX terminology, bridging mechanical engineering, physical AI telemetry, and decentralized clearing protocols.
             </p>
           </div>
 
           {/* Robot Mascot Badge */}
-          <div className="p-3 bg-[#202020] border border-[#4B463F] rounded-md flex items-center gap-3 shrink-0">
-            <img src="/images/robot_cat.png" alt="Robot Cat Mascot" className="w-12 h-12 object-contain rounded-lg bg-[#131313] p-1 border border-[#B87A4F]/40" />
+          <div className="p-3 bg-[#FFF5F8] border border-[#FFC2D1] rounded-2xl flex items-center gap-3 shrink-0 shadow-2xs">
+            <img src="/images/robot_cat.png" alt="Robot Cat Mascot" className="w-12 h-12 object-contain rounded-xl bg-white p-1 border border-[#FF758F]" />
             <div>
-              <h4 className="font-label-mono text-xs font-bold text-[#FCF4EC]">P(x) Term Assistant</h4>
-              <p className="text-[11px] text-[#969087]">19 Verified Definitions</p>
+              <h4 className="font-sans text-xs font-bold text-[#3A2D32]">P(x) Term Assistant</h4>
+              <p className="text-[11px] text-[#8F727D] font-medium">19 Verified Definitions</p>
             </div>
           </div>
         </div>
 
         {/* Search Bar & Filter Sector Pills */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center pt-2 border-t border-[#4B463F]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center pt-2 border-t border-[#FFC2D1]">
           
           {/* Search Input */}
           <div className="md:col-span-5 relative w-full">
-            <Search className="w-4 h-4 text-[#969087] absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-[#9E838F] absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search terminology..."
               value={effectiveSearch}
               onChange={(e) => setLocalSearch(e.target.value)}
-              className="w-full bg-[#131313] border border-[#4B463F] text-[#FCF4EC] font-body-md text-xs pl-10 pr-4 py-2.5 rounded focus:outline-none focus:border-[#DFD8D0] transition-colors placeholder:text-[#969087]"
+              className="w-full bg-[#FFF5F8] border border-[#FFC2D1] text-[#3A2D32] font-sans text-xs pl-10 pr-4 py-2.5 rounded-full focus:outline-none focus:border-[#FF758F] focus:ring-1 focus:ring-[#FF758F] transition-colors placeholder:text-[#9E838F]"
             />
           </div>
 
@@ -105,13 +106,14 @@ export const GlossaryView: React.FC<GlossaryViewProps> = ({ searchQuery }) => {
                 <button
                   key={c.id}
                   onClick={() => setSelectedCategory(c.id)}
-                  className={`font-label-mono text-xs px-3 py-1.5 rounded transition-all ${
+                  className={`font-sans text-xs px-3.5 py-1.5 rounded-full transition-all font-bold flex items-center gap-1 ${
                     isActive
-                      ? 'bg-[#DFD8D0] text-[#131313] font-bold'
-                      : 'bg-[#202020] text-[#CDC5BC] hover:text-[#FCF4EC] hover:bg-[#262626] border border-[#4B463F]'
+                      ? 'bg-[#FF4D6D] text-white shadow-sm'
+                      : 'bg-[#FFF0F3] text-[#6E5762] hover:text-[#FF4D6D] hover:bg-white border border-[#FFC2D1]'
                   }`}
                 >
-                  {c.label}
+                  <span>{c.icon}</span>
+                  <span>{c.label}</span>
                 </button>
               );
             })}
@@ -122,16 +124,19 @@ export const GlossaryView: React.FC<GlossaryViewProps> = ({ searchQuery }) => {
       </div>
 
       {/* Directory Grid: Balanced 2-Column Grid */}
-      <div className="bg-[#1C1C1C] border border-[#4B463F] rounded-md p-6 space-y-4">
-        <div className="flex items-center justify-between font-label-mono text-xs text-[#CDC5BC] border-b border-[#4B463F] pb-3">
-          <span className="font-bold text-[#FCF4EC]">TERMINOLOGY DIRECTORY ({sortedTerms.length} TERMS)</span>
-          <span className="text-[#B87A4F]">100% VERIFIED CONTENT</span>
+      <div className="bg-white border-2 border-[#FFC2D1] rounded-3xl p-6 space-y-4 shadow-sm">
+        <div className="flex items-center justify-between font-sans text-xs text-[#6E5762] border-b border-[#FFC2D1] pb-3">
+          <span className="font-bold text-[#3A2D32]">TERMINOLOGY DIRECTORY ({sortedTerms.length} TERMS)</span>
+          <span className="text-[#FF6B8B] font-extrabold flex items-center gap-1">
+            <Heart className="w-3.5 h-3.5 fill-[#FF6B8B]" />
+            <span>100% VERIFIED CONTENT</span>
+          </span>
         </div>
 
         {sortedTerms.length === 0 ? (
-          <div className="p-12 text-center text-[#969087]">
-            <Search className="w-8 h-8 text-[#969087] mx-auto mb-2 opacity-50" />
-            <p className="font-body-md text-xs font-semibold text-[#FCF4EC]">No glossary terms match your search filter.</p>
+          <div className="p-12 text-center text-[#8F727D]">
+            <Search className="w-8 h-8 text-[#FFB3C6] mx-auto mb-2" />
+            <p className="font-sans text-xs font-bold text-[#3A2D32]">No glossary terms match your search filter.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -142,26 +147,26 @@ export const GlossaryView: React.FC<GlossaryViewProps> = ({ searchQuery }) => {
               return (
                 <div
                   key={idx}
-                  className={`bg-[#202020] p-5 border-l-4 ${borderStyle} border-t border-r border-b border-[#4B463F] rounded-md hover:bg-[#262626] transition-all group flex flex-col justify-between`}
+                  className={`bg-[#FFF8FA] p-5 border-l-4 ${borderStyle} border-t border-r border-b border-[#FFC2D1] rounded-2xl hover:bg-[#FFF0F5] transition-all group flex flex-col justify-between shadow-xs`}
                 >
                   <div className="space-y-2">
                     <div className="flex items-center justify-between gap-2">
-                      <h3 className="font-label-mono text-base font-bold text-[#FCF4EC] group-hover:text-[#B87A4F] transition-colors">
+                      <h3 className="font-sans text-base font-bold text-[#3A2D32] group-hover:text-[#FF4D6D] transition-colors">
                         {t.term}
                       </h3>
-                      <span className={`font-label-tag text-[10px] uppercase px-2 py-0.5 rounded border ${tagStyle} font-semibold shrink-0`}>
+                      <span className={`font-sans text-[10px] uppercase px-2.5 py-0.5 rounded-full border ${tagStyle} font-bold shrink-0`}>
                         {t.category}
                       </span>
                     </div>
 
-                    <p className="font-body-md text-xs text-[#CDC5BC] leading-relaxed">
+                    <p className="font-sans text-xs text-[#6E5762] leading-relaxed font-medium">
                       {t.shortDef}
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-[#4B463F] flex items-center justify-between font-label-mono text-[11px] text-[#969087]">
-                    <span>STATUS: <strong className="text-[#7CB88F]">VERIFIED</strong></span>
-                    <ChevronRight className="w-4 h-4 text-[#4B463F] group-hover:text-[#FCF4EC] group-hover:translate-x-1 transition-all" />
+                  <div className="mt-4 pt-3 border-t border-[#FFD6E0] flex items-center justify-between font-sans text-[11px] text-[#8F727D]">
+                    <span>STATUS: <strong className="text-[#52B788] font-bold">VERIFIED</strong></span>
+                    <ChevronRight className="w-4 h-4 text-[#FFB3C6] group-hover:text-[#FF4D6D] group-hover:translate-x-1 transition-all" />
                   </div>
                 </div>
               );

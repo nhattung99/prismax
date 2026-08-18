@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, CheckCircle2 } from 'lucide-react';
+import { Calendar, Heart, CheckCircle2 } from 'lucide-react';
 import { TIMELINE_EVENTS } from '../../data/learnContent';
 
 interface TimelineViewProps {
@@ -14,58 +14,67 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ searchQuery }) => {
   );
 
   return (
-    <div className="space-y-6 max-w-4xl mx-auto">
+    <div className="space-y-6">
       
       {/* Header Banner */}
-      <div className="bg-[#1C1C1C] border border-[#4B463F] rounded-md p-5 text-center sm:text-left">
-        <h2 className="text-xl font-bold font-serif-editorial text-[#FCF4EC] flex items-center justify-center sm:justify-start gap-2">
-          <Calendar className="w-5 h-5 text-[#B87A4F]" />
-          <span>Verified Network Milestones & Roadmap</span>
+      <div className="bg-white border-2 border-[#FFC2D1] rounded-3xl p-6 shadow-sm">
+        <h2 className="text-xl sm:text-2xl font-bold font-serif-editorial text-[#3A2D32] flex items-center gap-2">
+          <Calendar className="w-6 h-6 text-[#FF6B8B]" />
+          <span>PrismaX Roadmap & Milestone History</span>
+          <Heart className="w-4 h-4 text-[#FF4D6D] fill-[#FF4D6D]" />
         </h2>
-        <p className="font-body-md text-xs text-[#CDC5BC] mt-1">
-          Chronological record of official public disclosures, funding milestones, and product releases
+        <p className="font-sans text-xs sm:text-sm text-[#6E5762] mt-0.5 font-medium">
+          Chronological milestone log documenting teleop cup launches, verify quality announcements, and product updates
         </p>
       </div>
 
-      {/* Timeline List */}
-      <div className="relative border-l-2 border-[#4B463F] ml-4 sm:ml-8 pl-6 sm:pl-8 space-y-8 py-2">
-        {filteredEvents.map((evt, idx) => (
-          <div key={idx} className="relative group">
-            
-            {/* Timeline Circle Bullet */}
-            <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-[#131313] border-2 border-[#B87A4F] flex items-center justify-center text-[#B87A4F] group-hover:bg-[#B87A4F] group-hover:text-[#131313] transition-colors">
-              <CheckCircle2 className="w-3.5 h-3.5" />
-            </div>
+      {/* Vertical Timeline Container */}
+      <div className="bg-white border-2 border-[#FFC2D1] rounded-3xl p-6 relative shadow-sm">
+        
+        {/* Center/Left Vertical Line */}
+        <div className="absolute top-8 bottom-8 left-8 w-1 bg-[#FFD6E0] rounded-full" />
 
-            {/* Content Card */}
-            <div className="bg-[#202020] border-l-4 border-l-[#B87A4F] border-t border-r border-b border-[#4B463F] rounded-md p-5 space-y-2 hover:bg-[#262626] transition-all">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="font-label-mono text-xs font-bold text-[#B87A4F]">
-                  {evt.date}
-                </span>
+        <div className="space-y-8 relative pl-10">
+          {filteredEvents.map((evt, idx) => (
+            <div key={idx} className="relative group">
+              
+              {/* Timeline Dot */}
+              <div className="absolute -left-10 top-1.5 w-6 h-6 rounded-full bg-white border-2 border-[#FF4D6D] flex items-center justify-center shadow-md">
+                <div className="w-2.5 h-2.5 rounded-full bg-[#FF4D6D]" />
+              </div>
 
-                {evt.badge && (
-                  <span className="font-label-tag text-[10px] uppercase px-2 py-0.5 rounded bg-[#7CB88F]/15 text-[#7CB88F] border border-[#7CB88F]/30 font-semibold">
-                    {evt.badge}
+              {/* Event Card */}
+              <div className="bg-[#FFF8FA] p-5 border-l-4 border-l-[#FF6B8B] border-t border-r border-b border-[#FFC2D1] rounded-2xl hover:bg-[#FFF0F5] transition-all shadow-xs space-y-2">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-sans text-xs px-3 py-1 bg-[#FF4D6D]/15 text-[#FF4D6D] border border-[#FF4D6D]/30 rounded-full font-extrabold">
+                    {evt.date}
                   </span>
-                )}
+
+                  {evt.badge && (
+                    <span className="font-sans text-[10px] uppercase px-2.5 py-0.5 rounded-full bg-emerald-50 text-[#2D6A4F] border border-emerald-200 font-bold flex items-center gap-1">
+                      <CheckCircle2 className="w-3 h-3 text-[#52B788]" />
+                      <span>{evt.badge}</span>
+                    </span>
+                  )}
+                </div>
+
+                <h3 className="font-serif-editorial text-lg font-bold text-[#3A2D32]">
+                  {evt.title}
+                </h3>
+
+                <p className="font-sans text-xs text-[#6E5762] leading-relaxed font-medium">
+                  {evt.description}
+                </p>
+
+                <div className="pt-2 border-t border-[#FFD6E0] font-sans text-[11px] text-[#8F727D]">
+                  Verified Source: <strong className="text-[#3A2D32]">{evt.source}</strong>
+                </div>
               </div>
 
-              <h3 className="font-headline-md text-lg font-bold font-serif-editorial text-[#FCF4EC]">
-                {evt.title}
-              </h3>
-
-              <p className="font-body-md text-xs text-[#CDC5BC] leading-relaxed">
-                {evt.description}
-              </p>
-
-              <div className="pt-2 border-t border-[#4B463F] font-label-mono text-[11px] text-[#969087]">
-                Verified Source: <strong className="text-[#FCF4EC]">{evt.source}</strong>
-              </div>
             </div>
+          ))}
+        </div>
 
-          </div>
-        ))}
       </div>
 
     </div>

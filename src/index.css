@@ -2,21 +2,21 @@
 
 @layer base {
   :root {
-    --bg-surface: #131313;
-    --bg-card: #202020;
-    --bg-interactive: #262626;
-    --bg-container-high: #2a2a2a;
-    --bg-container-lowest: #0e0e0e;
-    --text-primary: #FCF4EC;
-    --text-variant: #CDC5BC;
-    --text-muted: #969087;
-    --border-outline: #4B463F;
-    --border-subtle: rgba(75, 70, 63, 0.4);
+    --bg-surface: #FFF0F5;
+    --bg-section: #FFF8FA;
+    --bg-card: #FFFFFF;
+    --bg-interactive: #FFF5F8;
+    --text-primary: #3A2D32;
+    --text-variant: #6E5762;
+    --text-muted: #9E838F;
+    --border-outline: #FFC2D1;
+    --border-subtle: rgba(255, 194, 209, 0.5);
     
-    /* Category Colors */
-    --cat-terracotta: #B87A4F;
-    --cat-green: #7CB88F;
-    --cat-gold: #D9A45C;
+    /* Cute Category Pastel Palette */
+    --cat-rose: #FF6B8B;
+    --cat-green: #52B788;
+    --cat-gold: #FFB703;
+    --cat-purple: #B388FF;
   }
 
   body {
@@ -35,92 +35,86 @@
   }
 }
 
-/* Custom Hero Grid Pattern */
+/* Cute Pastel Background Pattern with Soft Sparkles */
 .hero-pattern {
-  background-image: linear-gradient(#202020 1px, transparent 1px), linear-gradient(90deg, #202020 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-color: #FFF5F8;
+  background-image: 
+    radial-gradient(#FFC2D1 1.2px, transparent 1.2px), 
+    radial-gradient(#FFD6E0 1.2px, #FFF5F8 1.2px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
 }
 
-/* Custom Scrollbar */
+/* Custom Soft Pink Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #131313;
+  background: #FFF0F5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #353534;
-  border-radius: 3px;
+  background: #FFB3C6;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B87A4F;
-}
-
-/* Industrial Card System (Tonal Layering & 4px Left Border Accents) */
-.prisma-card-editorial {
-  background-color: #202020;
-  border-left: 4px solid #B87A4F;
-  border-top: 1px solid #4B463F;
-  border-right: 1px solid #4B463F;
-  border-bottom: 1px solid #4B463F;
-  border-radius: 0.25rem;
-  transition: all 0.2s ease-in-out;
-}
-
-.prisma-card-editorial:hover {
-  background-color: #262626;
-  border-top-color: #969087;
-  border-right-color: #969087;
-  border-bottom-color: #969087;
+  background: #FF6584;
 }
 
 /* Category Accent Borders */
-.border-accent-terracotta {
-  border-left-color: #B87A4F !important;
+.border-accent-terracotta, .border-accent-rose {
+  border-left-color: #FF6B8B !important;
 }
 
 .border-accent-green {
-  border-left-color: #7CB88F !important;
+  border-left-color: #52B788 !important;
 }
 
 .border-accent-gold {
-  border-left-color: #D9A45C !important;
+  border-left-color: #FFB703 !important;
 }
 
-/* Primary Editorial Button */
+.border-accent-purple {
+  border-left-color: #B388FF !important;
+}
+
+/* Primary Cute Pink Button */
 .btn-editorial-primary {
-  background-color: #DFD8D0;
-  color: #131313;
-  font-family: 'JetBrains Mono', monospace;
+  background: linear-gradient(135deg, #FF758F 0%, #FF4D6D 100%);
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 13px;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
+  font-weight: 700;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(255, 77, 109, 0.25);
   transition: all 0.2s ease;
 }
 
 .btn-editorial-primary:hover {
-  background-color: #FCF4EC;
-  box-shadow: 0 2px 10px rgba(252, 244, 236, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 77, 109, 0.35);
+  background: linear-gradient(135deg, #FF85A1 0%, #FF5C8D 100%);
 }
 
 .btn-editorial-secondary {
-  background-color: transparent;
-  color: #FCF4EC;
-  border: 1px solid #4B463F;
-  font-family: 'JetBrains Mono', monospace;
+  background-color: #FFFFFF;
+  color: #FF4D6D;
+  border: 1.5px solid #FFC2D1;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 13px;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
+  font-weight: 700;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(255, 194, 209, 0.2);
   transition: all 0.2s ease;
 }
 
 .btn-editorial-secondary:hover {
-  background-color: #262626;
-  border-color: #969087;
-  color: #FFFFFF;
+  background-color: #FFF0F3;
+  border-color: #FF758F;
+  color: #E0527F;
+  transform: translateY(-1px);
 }
 
 /* Animations */
@@ -131,4 +125,14 @@
 
 .animate-fade-in {
   animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* Cute Floating Bouncy Animation */
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 3s ease-in-out infinite;
 }
